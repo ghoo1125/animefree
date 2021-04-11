@@ -1,7 +1,8 @@
 import abc
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List
-import re
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -20,7 +21,13 @@ class Parser(abc.ABC):
         futures = []
         for url in urls:
             futures.append(self.executor.submit(mapper, url))
-        return [future.result() for future in as_completed(futures)]
+
+        # as_completed is unordered, loop through manually
+        results = []
+        for future in futures:
+            results.extend(f.result() for f in as_completed([future]))
+
+        return results
 
     def get_and_parse(self, url) -> BeautifulSoup:
         response = requests.get(url)
