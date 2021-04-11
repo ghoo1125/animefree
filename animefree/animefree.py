@@ -11,7 +11,7 @@ if __name__ == '__main__':
         raise Exception("usage: python3 animefree.py {url}")
     target_url = args[1]
 
-    # # parse and get target file urls
+    # parse and get target file urls
     parser = ParserFactory().get_parser(target_url)
     target_file_urls = parser.parse(target_url)
     outputs = [
