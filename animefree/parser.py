@@ -28,7 +28,7 @@ class Parser(abc.ABC):
 
 
 class FileParser(Parser):
-    support_extensions = {"mp4"}
+    support_extensions = {"mp4", "jpg"}
 
     def __init__(self):
         self.thread_num = 1

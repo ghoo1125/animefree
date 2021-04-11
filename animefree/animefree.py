@@ -20,7 +20,7 @@ if __name__ == '__main__':
     parser = ParserFactory().get_parser(target_url)
     target_file_urls = parser.parse(target_url)
     outputs = [
-        f"{parser.title}-{i}.mp4" for i in range(len(target_file_urls), 0, -1)]
+        f"{parser.title}-{i}.{parser.ext}" for i in range(len(target_file_urls), 0, -1)]
     target_file_urls = target_file_urls[0:2]
     outputs = outputs[0:2]
     print("target_files:", target_file_urls)
