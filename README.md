@@ -19,3 +19,6 @@ python3 animefree.py https://file-examples-com.github.io/uploads/2017/04/file_ex
 ```
 python3 animefree.py https://anime1.cc/208507504/
 ```
+
+### Example Download Result
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/bf3d4ba6-45f9-4ed6-87a5-d5b88a09ef9f">
